@@ -16,7 +16,7 @@ commandFiles.forEach(file => {
     console.log(`Yüklenen Komut: ${command.name} ✅`);
     client.commands.set(command.name, command);
 });
-console.log(`Toplam ${ownerCommandFiles.length} komut yükleniyor. ✅`);
+console.log(`Toplam ${commandFiles.length} komut yükleniyor. ✅`);
 
 const eventFiles = readdirSync("./src/events").filter((file) => file.endsWith(".js"));
 eventFiles.forEach(file => {
@@ -24,6 +24,7 @@ eventFiles.forEach(file => {
     client.on(event.name, (client, ...args) => event.run(client, ...args));
     console.log(`Yüklenen Event: ${event.name} ✅`);
 })
+console.log(`Toplam ${eventFiles.length} komut yükleniyor. ✅`);
 
 client.on("disconnect", () => console.warn("Bot is disconnecting..."));
 client.on("reconnecting", () => console.log("Bot reconnecting..."));
