@@ -2,6 +2,16 @@
 
 A Discord mongoose invite bot. 😋
 
+# Note
+
+### TR
+
+Test yapılmadan paylaşılmıştır hata aldığınız vakit bize ulaşabilirsiniz.
+
+### EN
+
+Shared without testing, you can contact us when you get an error.
+
 # Setup
 
 -   Fill in the config.json inside the src folder.
