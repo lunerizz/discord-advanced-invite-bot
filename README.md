@@ -1,4 +1,4 @@
-# discord-advenced-invite-bot
+# discord-advanced-invite-bot
 
 A Discord mongoose invite bot. 😋
 
