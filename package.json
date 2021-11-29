@@ -1,0 +1,23 @@
+{
+  "name": "discord-advenced-invite-bot",
+  "version": "1.0.0",
+  "description": "Advanced invite bot for Discord.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "discord-advenced-invite-bot",
+    "toanky-invites-bot",
+    "invite-bot",
+    "discord-invite-bot",
+    "discord-invite"
+  ],
+  "author": "Toânky",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "mongoose": "^6.0.13",
+    "toanky-invite": "^1.0.5"
+  }
+}
