@@ -2,7 +2,7 @@ const config = require("../config.json");
 const inviter = require("../models/inviter");
 const invited = require("../models/invited");
 module.exports = {
-    name: "inviteJoin",
+    name: "guildMemberRemove",
     once: false,
     run: async(client, member) => {
 
