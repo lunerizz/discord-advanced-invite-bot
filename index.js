@@ -1,4 +1,4 @@
-﻿const { Client, Collection, Intents, MessageEmbed } = require("discord.js");
+const { Client, Collection, Intents, MessageEmbed } = require("discord.js");
 const { connect } = require("mongoose");
 const { on } = require("toanky-invite")
 const { readdirSync } = require("fs")
@@ -22,10 +22,9 @@ console.log(`Toplam ${commandFiles.length} komut yükleniyor. ✅`);
 const eventFiles = readdirSync("./src/events").filter((file) => file.endsWith(".js"));
 eventFiles.forEach(file => {
     const event = require(`./src/events/${file}`);
-    client.on(event.name, (client, ...args) => event.run(client, ...args));
+    client.on(event.name, (...args) => event.run(client, ...args));
     console.log(`Yüklenen Event: ${event.name} ✅`);
 })
-console.log(`Toplam ${eventFiles.length} komut yükleniyor. ✅`);
 
 client.on("disconnect", () => console.warn("Bot is disconnecting..."));
 client.on("reconnecting", () => console.log("Bot reconnecting..."));
