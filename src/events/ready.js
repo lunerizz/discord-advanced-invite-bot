@@ -1,4 +1,4 @@
-const config = require("./src/config.json")
+const config = require("../config.json")
 module.exports = {
     name: "ready",
     once: false,
