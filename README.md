@@ -6,11 +6,11 @@ A Discord mongoose invite bot. 😋
 
 ### TR
 
-Test yapılmadan paylaşılmıştır hata aldığınız vakit bize ulaşabilirsiniz.
+toanky-invites modülünün 1.2.0 versiyonunu kullanınız yoksa geçerli olmaz, çünki v12 bir bottur.
 
 ### EN
 
-Shared without testing, you can contact us when you get an error.
+If the toanky-invites module does not have version 1.2.0, it will not be valid because v12 is a bot.
 
 # Setup
 
