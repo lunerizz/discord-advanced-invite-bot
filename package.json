@@ -18,6 +18,6 @@
   "dependencies": {
     "discord.js": "^12.5.3",
     "mongoose": "^6.0.13",
-    "toanky-invite": "^1.0.5"
+    "toanky-invite": "^1.2.0"
   }
 }
