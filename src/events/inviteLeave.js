@@ -16,6 +16,8 @@ module.exports = {
         if(invited_data.code != config.GUILD_URL) {
             let invitedData = await invited.findOne({ guild: member.guild.id, user: member.id })
             let inviterData = await inviter.findOne({ guild: member.guild.id, user: invitedData.inviter })
+            
+            const inviteUser = member.guild.members.cache.get(invitedData.inviter)
         
             if(inviterData) {
                 inviterData.regular -= 1
@@ -39,7 +41,7 @@ module.exports = {
             let bonus = newinvitedData ? inviterData.bonus ? inviterData.bonus : 0 : 0
             let total = regular + bonus + fakes
 
-            invite_log.send(`${config.STAR_EMOJI} ${member.user.tag} kullanıcısı sunucudan ayrıldı. (Davet eden: ${inviter}'nin \`${total}\` daveti kaldı.)`)
+            invite_log.send(`${config.STAR_EMOJI} ${member.user.tag} kullanıcısı sunucudan ayrıldı. (Davet eden: ${inviteUser}'nin \`${total}\` daveti kaldı.)`)
         }
     }
     if(!invited_data) {
