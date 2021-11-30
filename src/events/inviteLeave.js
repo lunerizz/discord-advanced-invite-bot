@@ -20,11 +20,11 @@ module.exports = {
             if(inviterData) {
                 inviterData.regular -= 1
                 inviterData.leave += 1
-                await client.save(inviterData)
+                await inviterData.save()
             }
             if(!inviterData) {
                 const schema = new inviter({ guild: member.guild.id, user: inviteUser.id, regular: 0, fakes: 0, bonus: 0, leave: 1 })
-                await client.save(schema)
+                await schema.save()
             }
             
             if(invitedData) {
