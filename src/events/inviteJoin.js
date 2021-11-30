@@ -1,6 +1,6 @@
 const config = require("../config.json");
-const inviter = require("../models/inviter");
-const invited = require("../models/invited");
+const inviter_schema = require("../models/inviter");
+const invited_schema = require("../models/invited");
 module.exports = {
     name: "inviteJoin",
     once: false,
@@ -21,21 +21,21 @@ module.exports = {
                 
                 if(inviterData) {
                     inviterData.regular += 1
-                    await client.save(inviterData)
+                    await inviterData.save()
                 }
                 if(!inviterData) {
                     const schema = new inviter_schema({ guild: member.guild.id, user: inviter.id, regular: 1, fake: 0, bonus: 0, leave: 0 })
-                    await client.save(schema)
+                    await schema.save()
                 }
         
                 if(invitedData) {
                     invitedData.code = invite.code
                     invitedData.inviter = inviter.id
-                    await client.save(invitedData)
+                    await invitedData.save()
                 }
                 if(!invitedData) {
                     const schema = new invited_schema({ guild: member.guild.id, user: user.id, inviter: inviter.id, code: invite.code })
-                    await client.save(schema)
+                    await schema.save()
                 }
         
                 let messageData = await inviter_schema.findOne({ guild: member.guild.id, user: inviter.id });
